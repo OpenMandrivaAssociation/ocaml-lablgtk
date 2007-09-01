@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}
 %define version		1.2.7
-%define release		%mkrel 11
+%define release		%mkrel 12
 
 Name:		%{name}
 Version:	%{version}
@@ -21,7 +21,7 @@ OCaml interface to the GIMP Tool Kit.
 %package devel
 Summary:	Development files for %{name}
 Group:		Development/Other
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	gtk-devel
 
 %description devel
@@ -38,26 +38,25 @@ make opt
 
 %install
 rm -rf %{buildroot}
-destdir=`ocamlc -where`
 install -d -m 755 %{buildroot}%{_bindir}
-install -d -m 755 %{buildroot}$destdir/stublibs
+install -d -m 755 %{buildroot}%{ocaml_sitelib}/stublibs
 make install \
 	BINDIR=%{buildroot}%{_bindir} \
-	INSTALLDIR=%{buildroot}$destdir/lablgtk \
-	DLLDIR=%{buildroot}$destdir/stublibs
+	INSTALLDIR=%{buildroot}%{ocaml_sitelib}/lablgtk \
+	DLLDIR=%{buildroot}%{ocaml_sitelib}/stublibs
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc COPYING
-%{_libdir}/ocaml/stublibs/*
+%doc COPYING CHANGES README
+%dir %{ocaml_sitelib}/lablgtk
+%{ocaml_sitelib}/lablgtk/*.cmi
+%{ocaml_sitelib}/stublibs/*
 
 %files devel
 %defattr(-,root,root)
-%doc CHANGES README
 %{_bindir}/*
-%{_libdir}/ocaml/lablgtk
-
-
+%{ocaml_sitelib}/lablgtk/*
+%exclude %{ocaml_sitelib}/lablgtk/*.cmi
