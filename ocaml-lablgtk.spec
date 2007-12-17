@@ -13,7 +13,6 @@ License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
 BuildRequires:	gtk-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 OCaml interface to the GIMP Tool Kit.
