@@ -16,7 +16,7 @@ BuildRequires:	gtk-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
-OCaml interface to the GIMP Tool Kit.
+OCaml interface to Gtk+ tool kit.
 
 %package devel
 Summary:	Development files for %{name}
