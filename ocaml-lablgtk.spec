@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}
 %define version		1.2.7
-%define release		%mkrel 13
+%define release		%mkrel 14
 
 Name:		%{name}
 Version:	%{version}
@@ -53,10 +53,20 @@ rm -rf %{buildroot}
 %doc COPYING CHANGES README
 %dir %{ocaml_sitelib}/lablgtk
 %{ocaml_sitelib}/lablgtk/*.cmi
-%{ocaml_sitelib}/stublibs/*
+%{ocaml_sitelib}/lablgtk/*.cma
+%{ocaml_sitelib}/stublibs/*.so
 
 %files devel
 %defattr(-,root,root)
 %{_bindir}/*
-%{ocaml_sitelib}/lablgtk/*
-%exclude %{ocaml_sitelib}/lablgtk/*.cmi
+%{ocaml_sitelib}/lablgtk/*.a
+%{ocaml_sitelib}/lablgtk/*.cmo
+%{ocaml_sitelib}/lablgtk/*.cmx
+%{ocaml_sitelib}/lablgtk/*.cmxa
+%{ocaml_sitelib}/lablgtk/*.mli
+%{ocaml_sitelib}/lablgtk/*.ml
+%{ocaml_sitelib}/lablgtk/*.o
+%{ocaml_sitelib}/lablgtk/*.h
+%{ocaml_sitelib}/lablgtk/varcc
+%{ocaml_sitelib}/lablgtk/lablgtktop
+%{ocaml_sitelib}/lablgtk/lablgtktop_t
