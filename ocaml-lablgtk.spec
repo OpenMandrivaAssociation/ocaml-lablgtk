@@ -1,7 +1,7 @@
 %define base_name	lablgtk
 %define name		ocaml-%{base_name}
 %define version		1.2.7
-%define release		%mkrel 14
+%define release		%mkrel 15
 
 Name:		%{name}
 Version:	%{version}
@@ -39,11 +39,11 @@ make opt
 %install
 rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_bindir}
-install -d -m 755 %{buildroot}%{ocaml_sitelib}/stublibs
+install -d -m 755 %{buildroot}%{_libdir}/ocaml/stublibs
 make install \
 	BINDIR=%{buildroot}%{_bindir} \
-	INSTALLDIR=%{buildroot}%{ocaml_sitelib}/lablgtk \
-	DLLDIR=%{buildroot}%{ocaml_sitelib}/stublibs
+	INSTALLDIR=%{buildroot}%{_libdir}/ocaml/lablgtk \
+	DLLDIR=%{buildroot}%{_libdir}/ocaml/stublibs
 
 %clean
 rm -rf %{buildroot}
@@ -51,22 +51,22 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc COPYING CHANGES README
-%dir %{ocaml_sitelib}/lablgtk
-%{ocaml_sitelib}/lablgtk/*.cmi
-%{ocaml_sitelib}/lablgtk/*.cma
-%{ocaml_sitelib}/stublibs/*.so
+%dir %{_libdir}/ocaml/lablgtk
+%{_libdir}/ocaml/lablgtk/*.cmi
+%{_libdir}/ocaml/lablgtk/*.cma
+%{_libdir}/ocaml/stublibs/*.so
 
 %files devel
 %defattr(-,root,root)
 %{_bindir}/*
-%{ocaml_sitelib}/lablgtk/*.a
-%{ocaml_sitelib}/lablgtk/*.cmo
-%{ocaml_sitelib}/lablgtk/*.cmx
-%{ocaml_sitelib}/lablgtk/*.cmxa
-%{ocaml_sitelib}/lablgtk/*.mli
-%{ocaml_sitelib}/lablgtk/*.ml
-%{ocaml_sitelib}/lablgtk/*.o
-%{ocaml_sitelib}/lablgtk/*.h
-%{ocaml_sitelib}/lablgtk/varcc
-%{ocaml_sitelib}/lablgtk/lablgtktop
-%{ocaml_sitelib}/lablgtk/lablgtktop_t
+%{_libdir}/ocaml/lablgtk/*.a
+%{_libdir}/ocaml/lablgtk/*.cmo
+%{_libdir}/ocaml/lablgtk/*.cmx
+%{_libdir}/ocaml/lablgtk/*.cmxa
+%{_libdir}/ocaml/lablgtk/*.mli
+%{_libdir}/ocaml/lablgtk/*.ml
+%{_libdir}/ocaml/lablgtk/*.o
+%{_libdir}/ocaml/lablgtk/*.h
+%{_libdir}/ocaml/lablgtk/varcc
+%{_libdir}/ocaml/lablgtk/lablgtktop
+%{_libdir}/ocaml/lablgtk/lablgtktop_t
