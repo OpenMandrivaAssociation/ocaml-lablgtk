@@ -12,6 +12,7 @@ URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
 License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
+BuildRequires:	ocaml-camlp4-devel
 BuildRequires:	gtk+-devel
 
 
