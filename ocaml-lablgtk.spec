@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 Summary:	OCaml interface to the GIMP Tool Kit
 Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/lablgtk-%{version}.tar.bz2
-URL:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
+URL:		https://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
 License:	LGPL
 Group:		Development/Other
 BuildRequires:	camlp4
