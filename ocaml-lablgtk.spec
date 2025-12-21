@@ -11,6 +11,7 @@ Source:		http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/lablgtk-%{version}.t
 URL:		https://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/lablgtk.html
 License:	LGPL
 Group:		Development/Other
+BuildRequires:	make
 BuildRequires:	camlp4
 BuildRequires:	ocaml-camlp4-devel
 BuildRequires:	gtk+-devel
